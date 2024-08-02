@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-bold mb-4">Image Gallery</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {% for image in images %}
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="{{ image.url }}" alt="{{ image.title }}" class="w-full h-64 object-cover rounded-lg">
+                    <h2 class="text-lg font-bold mt-2">{{ image.title }}</h2>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
